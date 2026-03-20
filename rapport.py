@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-"""
-Module 2 : Génération du rapport JSON
-Ce module prend les données analysées par le module 1 et génère un fichier JSON.
-"""
 
 import json
 import os
@@ -12,9 +5,7 @@ import platform
 from datetime import datetime
 
 def generer_rapport(source, total_lignes, par_niveau, top5_erreurs, fichiers_traites):
-    """
-    Crée un fichier JSON contenant le rapport de l'analyse des logs.
-    """
+
     try:
         # Obtenir la date et l'heure actuelles
         maintenant = datetime.now()
