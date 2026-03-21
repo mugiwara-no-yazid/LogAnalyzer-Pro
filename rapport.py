@@ -70,15 +70,3 @@ def generer_rapport(source, total_lignes, par_niveau, top5_erreurs, fichiers_tra
         # On quitte le programme avec une erreur
         import sys
         sys.exit(1)
-
-# Petit test pour voir si la fonction marche (cette partie ne s'exécutera que si on lance rapport.py directement)
-if __name__ == "__main__":
-    # Données bidon pour tester
-    source_test = "/chemin/vers/logs"
-    lignes_test = 150
-    niveaux_test = {"ERROR": 10, "WARN": 40, "INFO": 100}
-    erreurs_test = ["Erreur 1", "Erreur 2", "Erreur 3"]
-    fichiers_test = ["app1.log", "app2.log"]
-    
-    # Appel de la fonction pour le test
-    generer_rapport(source_test, lignes_test, niveaux_test, erreurs_test, fichiers_test)
