@@ -1,0 +1,22 @@
+2024-04-01 05:00:00 INFO Démarrage de l'API Gateway sur le port 8080
+2024-04-01 05:00:08 INFO Chargement des règles de routage (42 routes enregistrées)
+2024-04-01 05:30:00 INFO 2340 requêtes traitées depuis le démarrage
+2024-04-01 06:00:00 WARN Latence élevée détectée sur l'endpoint /api/v2/users (850ms)
+2024-04-01 06:15:00 ERROR Service distant /api/v2/orders injoignable après 3 tentatives
+2024-04-01 06:30:22 INFO Remise à zéro du compteur de rate limiting effectuée
+2024-04-01 06:45:00 WARN Latence élevée détectée sur l'endpoint /api/v2/users (850ms)
+2024-04-01 07:00:00 ERROR Service distant /api/v2/orders injoignable après 3 tentatives
+2024-04-01 07:15:11 INFO Mise à jour des règles de pare-feu applicatif (WAF)
+2024-04-01 07:30:00 WARN Taux d'erreur HTTP 5xx supérieur à 2% sur la dernière minute
+2024-04-01 07:45:00 ERROR Service distant /api/v2/orders injoignable après 3 tentatives
+2024-04-01 08:00:00 INFO Rotation des clés API effectuée pour 3 clients
+2024-04-01 08:15:33 WARN Latence élevée détectée sur l'endpoint /api/v2/users (850ms)
+2024-04-01 08:30:00 ERROR Échec de la connexion au serveur LDAP
+2024-04-01 08:45:00 INFO Circuit breaker réarmé pour le service de paiement
+2024-04-01 09:00:00 WARN Taux d'erreur HTTP 5xx supérieur à 2% sur la dernière minute
+2024-04-01 09:15:22 ERROR Service distant /api/v2/orders injoignable après 3 tentatives
+2024-04-01 09:30:00 INFO Rapport de trafic horaire généré
+2024-04-01 09:45:00 WARN Latence élevée détectée sur l'endpoint /api/v2/users (850ms)
+2024-04-01 10:00:00 ERROR Échec de la connexion au serveur LDAP
+2024-04-01 10:30:00 INFO API Gateway opérationnelle
+2024-04-01 11:00:00 WARN Taux d'erreur HTTP 5xx supérieur à 2% sur la dernière minute

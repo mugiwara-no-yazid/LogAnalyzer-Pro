@@ -31,22 +31,16 @@ def creer_archive(date_creation):
 
 
 def verifier_espace(destination):
-    result = subprocess.run(
-        ["df", "-m", destination],
-        capture_output=True,
-        text=True,
-        check=True
-    )
 
-    output_lines = result.stdout.strip().splitlines()
-    df_fields = output_lines[-1].split()
-    espace_dispo = int(df_fields[3])
+    total, used, free = shutil.disk_usage(destination if os.path.isdir(destination) else chemin_racine())
+    espace_dispo = free // BYTES_PER_MEGABYTE
 
     if espace_dispo < espace_min:
         raise RuntimeError(
-            f"Espace insuffisannt : {espace_dispo} mo dispo "
+            f"Espace insuffisant : {espace_dispo} mo dispo "
             f"(minimum requis : {espace_min} mo)."
         )
+
 
 
 def compresse_archiv(chemin_logs, chemin_archives):
@@ -54,11 +48,13 @@ def compresse_archiv(chemin_logs, chemin_archives):
         for chemin_des_log in chemin_logs:
             archive.add(chemin_des_log, arcname=os.path.basename(chemin_des_log))
 
-
 def deplacer_archive(chemin_archiv, destination):
     os.makedirs(destination, exist_ok=True)
-    return shutil.move(chemin_archiv, destination)
+    dest_finale = os.path.join(destination, os.path.basename(chemin_archiv))
 
+    if os.path.exists(dest_finale):
+        os.remove(dest_finale)
+    return shutil.move(chemin_archiv, destination)
 
 def age_fichier(chemin_fichier):
     derniere_modif = os.path.getmtime(chemin_fichier)
@@ -72,10 +68,10 @@ def supp_ancien_rapport(jours_fichier):
     tout_rapports = glob.glob(model_rapport)
     supp_rapport = []
 
-    for chemin_rapports in tout_rapports:
-        if age_fichier(chemin_rapports) > jours_fichier:
-            os.remove(chemin_rapports)
-            supp_rapport.append(chemin_rapports)
+    for chemin_rapport in tout_rapports:
+        if age_fichier(chemin_rapport) > jours_fichier:
+            os.remove(chemin_rapport)
+            supp_rapport.append(chemin_rapport)
 
     return supp_rapport
 
