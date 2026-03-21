@@ -7,9 +7,7 @@ from datetime import datetime
 
 
 def generer_rapport(source, total_lignes, par_niveau, top5_erreurs, fichiers_traites):
-    """
-    Génère un fichier de rapport JSON structuré à partir des statistiques de logs.
-    """
+
     try:
         maintenant = datetime.now()
         date_fichier = maintenant.strftime("%Y-%m-%d")
