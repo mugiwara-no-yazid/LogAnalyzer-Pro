@@ -854,4 +854,4 @@ Projet réalisé dans le cadre du **TP Programmation Système en Python — L3 I
 
 ---
 
-*README généré le 24 mars 2026*
+
