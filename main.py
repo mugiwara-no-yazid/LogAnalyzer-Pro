@@ -42,11 +42,7 @@ def recuperer_arguments():
 
 
 def main():
-    """
-    Orchestre les 3 modules dans l'ordre : analyse → rapport → archivage.
-    Chaque étape est protégée par un try/except, le script s'arrête proprement en cas de pépin.
-    """
-
+  
     
     args = recuperer_arguments()
     source_absolue = os.path.abspath(args.source)
