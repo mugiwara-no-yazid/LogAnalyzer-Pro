@@ -57,13 +57,13 @@ python main.py --source <source> --dest <destination> [--retention <nombre_de_jo
 
 ```bash
 # Analyse basique : logs dans ./logs, archive dans ./backups, supprime rapports > 30 jours
-python main.py --source ./logs --dest ./backups
+python main.py --source ./logs_test --dest ./backups
 
 # Avec filtre sur le niveau ERROR uniquement
-python main.py --source ./logs --dest ./backups --retention 30 --niveau ERROR
+python main.py --source ./logs_test --dest ./backups --retention 30 --niveau ERROR
 
 # Chemin absolu, conservation des rapports sur 7 jours
-python main.py --source ./logs --dest ./backups --retention 7
+python main.py --source ./logs_test --dest ./backups --retention 7
 
 ```
 
@@ -78,6 +78,7 @@ Rapport sauvegardé avec succès : C:\Users\test\Desktop\python\LogAnalyzer-Pro\
 
 [3/3] Archivage vers 'C:\Users\test\Desktop\python\LogAnalyzer-Pro' (rétention : 2 jours)...
     → Archive créée
+    → Aucun rapport à supprimer (tous récents).
 
  Pipeline terminé avec succès !
 ```
