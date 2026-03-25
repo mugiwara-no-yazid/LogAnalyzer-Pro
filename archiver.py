@@ -40,9 +40,9 @@ def creer_archive(date_creation):
 def verifier_espace(destination):
     """Vérifie l'espace disque disponible via subprocess avant d'archiver."""
     if platform.system() == "Windows":
-        cmd = ["powershell", "-Command", f"(Get-PSDrive -Root '{destination[0]}').Free / 1MB"]
+        cmd = ["powershell", "-Command", f"(Get-PSDrive -Name '{destination[0]}').Free / 1MB"]
         result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-        espace_dispo = int(float(result.stdout.strip()))
+        espace_dispo = int(float(result.stdout.strip().replace(',', '.')))
     else:
         result = subprocess.run(
             ["df", "-m", destination],
