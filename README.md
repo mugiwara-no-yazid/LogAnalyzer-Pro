@@ -1,4 +1,4 @@
-# 📋 LogAnalyzer — Analyseur et archiveur de fichiers journaux
+# LogAnalyzer — Analyseur et archiveur de fichiers journaux
 
 ## 1. Description du projet et objectif
 
