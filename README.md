@@ -116,9 +116,9 @@ Vérifie l'espace disque disponible, compresse les fichiers `.log` dans une arch
 ## 5. Planification automatique avec Cron
 
 ```cron
-0 2 * * 1 /usr/bin/python3 /chemin/vers/loganalyzer/main.py --source /var/logs/app --dest /var/backups --niveau ALL --retention 30 >> /var/logs/loganalyzer.log 2>&1
+0 3 * * 0 /usr/bin/python3 /chemin/vers/loganalyzer/main.py --source /var/logs/app --dest /var/backups --niveau ALL --retention 30 >> /var/logs/loganalyzer.log 2>&1
 ```
-> **Résultat :** le script s'exécute **tous les lundis à 2h00**, analyse les logs de `/var/logs/app`, dépose l'archive dans `/var/backups`, supprime les rapports de plus de 30 jours et consigne toute la sortie dans `/var/logs/loganalyzer.log`.
+> **Résultat :** le script s'exécute **tous les dimanches à 03h00**, analyse les logs de `/var/logs/app`, dépose l'archive dans `/var/backups`, supprime les rapports de plus de 30 jours et consigne toute la sortie dans `/var/logs/loganalyzer.log`.
 
 ---
 
