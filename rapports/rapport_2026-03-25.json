@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "date": "2026-03-25 09:40:22",
+        "date": "2026-03-25 11:12:45",
         "utilisateur": "Yazid Soumanou",
         "os": "Windows",
         "source": "C:\\Users\\Yazid Soumanou\\Desktop\\python\\LogAnalyzer-Pro\\logs_test"
@@ -8,9 +8,9 @@
     "statistiques": {
         "total_lignes": 62,
         "par_niveau": {
-            "ERROR": 19,
-            "WARN": 17,
-            "INFO": 26
+            "ERROR": 38,
+            "WARN": 0,
+            "INFO": 0
         },
         "top5_erreurs": [
             "\u00c9chec de la connexion au serveur LDAP\n",

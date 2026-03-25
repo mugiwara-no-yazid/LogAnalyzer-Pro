@@ -51,6 +51,7 @@ def main():
     print(f"\n[1/3] Analyse des logs dans : {source_absolue}")
     try:
         resultats = analyser(source_absolue, args.niveau)
+
     except Exception as erreur:
         print(f"[ERREUR FATALE] L'analyse a planté : {erreur}")
         sys.exit(1)
