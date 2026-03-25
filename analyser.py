@@ -94,17 +94,28 @@ def analyser(source, niveau):
         for item in chemin.glob('*.log'):
             with open(item, "r", encoding="utf-8") as file:
                 for numero, ligne in enumerate(file, start=1):
-                    if "ERROR" in ligne:
-                        if(ligne.split(f"ERROR ")[1] in nbrErrorPhrase):
-                            nbrErrorPhrase[ligne.split(f"ERROR ")[1]] += 1
-                        else:
-                            nbrErrorPhrase[ligne.split(f"ERROR ")[1]] = 1
-                        nbrNiveau["ERROR"] += 1
-                    if "WARN" in ligne:
-                        nbrNiveau["WARN"] += 1
-                    if "INFO" in ligne:
-                        nbrNiveau["INFO"] += 1
-                    allPhrase += 1
+                    if niveau == "ALL" :
+                        if "ERROR" in ligne:
+                            if(ligne.split(f"ERROR ")[1] in nbrErrorPhrase):
+                                nbrErrorPhrase[ligne.split(f"ERROR ")[1]] += 1
+                            else:
+                                nbrErrorPhrase[ligne.split(f"ERROR ")[1]] = 1
+                            nbrNiveau["ERROR"] += 1
+                        if "WARN" in ligne:
+                            nbrNiveau["WARN"] += 1
+                        if "INFO" in ligne:
+                            nbrNiveau["INFO"] += 1
+                        allPhrase += 1
+                    else :
+                        allPhrase += 1
+                        if niveau in ligne:
+                            nbrNiveau[niveau]+=1
+                        if niveau=="ERROR" and "ERROR" in ligne:
+                            if(ligne.split(f"ERROR ")[1] in nbrErrorPhrase):
+                                nbrErrorPhrase[ligne.split(f"ERROR ")[1]] += 1
+                            else:
+                                nbrErrorPhrase[ligne.split(f"ERROR ")[1]] = 1
+                            nbrNiveau["ERROR"] += 1
         return {
             "Nombre total de lignes analysées": allPhrase,
             "message recurent": tri_dict(nbrErrorPhrase),
