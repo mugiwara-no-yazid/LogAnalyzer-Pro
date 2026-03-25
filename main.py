@@ -106,7 +106,7 @@ def main():
         print(f"[ERREUR FATALE] L'archivage a planté : {erreur}")
         sys.exit(1)
 
-    print("\n✅ Pipeline terminé avec succès !\n")
+    print("\n Pipeline terminé avec succès !\n")
 
 
 if __name__ == "__main__":
